@@ -1,0 +1,37 @@
+{
+  "name": "fluent-amp",
+  "version": "0.0.0",
+  "description": "Import the azure media player fluently into your project",
+  "main": "dist/index.js",
+  "files": [
+    "./dist",
+    "./types"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farhadnowzari/fluent-amp.git"
+  },
+  "keywords": [
+    "azure",
+    "media-player",
+    "media",
+    "npm",
+    "fluent"
+  ],
+  "author": "FDN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farhadnowzari/fluent-amp/issues"
+  },
+  "homepage": "https://github.com/farhadnowzari/fluent-amp#readme",
+  "dependencies": {
+    "@types/uuid": "^8.3.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
