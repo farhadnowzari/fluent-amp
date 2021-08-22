@@ -4,8 +4,8 @@
   "description": "Import the azure media player fluently into your project",
   "main": "dist/index.js",
   "files": [
-    "./dist",
-    "./types"
+    "dist",
+    "types"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,7 @@
     "npm",
     "fluent"
   ],
-  "author": "FDN",
+  "author": "Farhad Nowzari",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/farhadnowzari/fluent-amp/issues"
