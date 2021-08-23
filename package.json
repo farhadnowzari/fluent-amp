@@ -1,6 +1,6 @@
 {
   "name": "fluent-amp",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "Import the azure media player fluently into your project",
   "main": "dist/index.js",
   "files": [
@@ -8,6 +8,7 @@
     "types"
   ],
   "scripts": {
+    "build": "rimraf ./dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,6 +33,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "rimraf": "^3.0.2",
     "typescript": "^4.3.5"
   }
 }
