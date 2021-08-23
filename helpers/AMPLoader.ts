@@ -1,5 +1,9 @@
 import AMPBuilder from "./AMPBuilder";
 
+
+const AMP_STYLESHEET_ID = "azure-media-player-style";
+const AMP_SCRIPT_ID = "azure-media-player-script";
+
 export default class AMPLoader {
 
     private version: string;
@@ -26,7 +30,7 @@ export default class AMPLoader {
             this.buildStyles()
                 .then(() => {
                     this.buildScripts()
-                        .then(() => resolve(new AMPBuilder()))
+                        .then(() => resolve(new AMPBuilder(this.skin)))
                         .catch(() => reject());
                 }).catch(() => reject());
         });
@@ -35,10 +39,15 @@ export default class AMPLoader {
 
     private buildStyles(): Promise<void> {
         return new Promise((resolve, reject) => {
+            const stylesheet = document.getElementById(AMP_STYLESHEET_ID);
+
+            if(typeof(stylesheet) !== 'undefined' && stylesheet !== null) resolve();
+
             const linkTag = document.createElement("link");
-            linkTag.href = `//amp.azure.net/libs/amp/latest/skins/${this.skin}/azuremediaplayer.min.css`;
+            linkTag.href = `//amp.azure.net/libs/amp/${this.version}/skins/${this.skin}/azuremediaplayer.min.css`;
             linkTag.rel = "stylesheet";
-            document.head.insertBefore(linkTag, document.head.firstChild);
+            linkTag.id = AMP_STYLESHEET_ID;
+            document.head.appendChild(linkTag);
             linkTag.onload = () => {
                 resolve();
             };
@@ -51,8 +60,12 @@ export default class AMPLoader {
 
     private buildScripts(): Promise<void> {
         return new Promise((resolve, reject) => {
+            const script = document.getElementById(AMP_SCRIPT_ID);
+
+            if(typeof(script) !== 'undefined' && script !== null) resolve();
+
             const scriptTag = document.createElement("script");
-            scriptTag.id = "azure-media-player-script";
+            scriptTag.id = AMP_SCRIPT_ID;
             scriptTag.src = `//amp.azure.net/libs/amp/${this.version}/azuremediaplayer.min.js`;
             document.body.appendChild(scriptTag);
             scriptTag.onload = () => {
