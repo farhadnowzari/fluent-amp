@@ -52,7 +52,7 @@ export default class MyPlugin implements AMPPlugin {
 }
 ```
 
-and now you use it as the following.
+and now you use it as below.
 
 ```
 .
