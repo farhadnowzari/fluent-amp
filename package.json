@@ -1,6 +1,6 @@
 {
   "name": "fluent-amp",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Import the azure media player fluently into your project",
   "main": "dist/index.js",
   "files": [

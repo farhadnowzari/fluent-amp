@@ -31,7 +31,7 @@ export default class AMPLoader {
                 .then(() => {
                     this.buildScripts()
                         .then(() => resolve(new AMPBuilder(this.skin)))
-                        .catch(() => reject());
+                         .catch(() => reject());
                 }).catch(() => reject());
         });
     }
